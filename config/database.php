@@ -14,16 +14,12 @@ class Database{
 
     public static $conn;
 
-    public static getConnection(){
+    public static function getConnection(){
         self::$conn = null;
+        $dsn = 'mysql:host='.self::$host.'; dbname='.self::$dbname;
 
         try{
-            self::$conn = new PDO(
-                'mysql:host='.self::$host.'; '
-                'dbname='.self::$dbname, 
-                self::$user, 
-                self::$pass
-            )
+            self::$conn = new PDO($dsn,self::$user, self::$pass);
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             self::$conn->exec();
         }

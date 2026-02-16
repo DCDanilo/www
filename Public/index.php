@@ -3,7 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use WWW\Controller\UserController;
+use WWW\Controllers\UserController;
 
 // Recuperiamo l'URL pulita (es. "prodotti/scarpe")
 $url = $_GET['url'] ?? 'home';

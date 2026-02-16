@@ -4,7 +4,9 @@
   <h1>Lista Utenti</h1>
   <ul class="list-group">
     <?php foreach ($users as $user): ?>
-      <li class="list-group-item"><?= htmlspecialchars($user['nome']) ?></li>
+      <li class="list-group-item">
+        <a href="user/<?= htmlspecialchars($user['id_utente']) ?>"><?= htmlspecialchars($user['nome']) ?></a>
+      </li>
     <?php endforeach; ?>
   </ul>
 </div>

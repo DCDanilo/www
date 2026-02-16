@@ -16,12 +16,11 @@ class Database{
 
     public static function getConnection(){
         self::$conn = null;
-        $dsn = 'mysql:host='.self::$host.'; dbname='.self::$dbname;
+        $dsn = 'mysql:host='.self::$host.'; dbname='.self::$db_name;
 
         try{
-            self::$conn = new PDO($dsn,self::$user, self::$pass);
+            self::$conn = new PDO($dsn,self::$user, self::$password);
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            self::$conn->exec();
         }
         catch(PDO_EXCEPTION $e){
             echo "Errore di connessione ". $e->getMessage();

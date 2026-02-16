@@ -1,7 +1,7 @@
 <?php
 //connessione al DB.
 
-namespace WWW\config;
+namespace WWW\Config;
 
 use PDO;
 Use PDO_EXCEPTION;

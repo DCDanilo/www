@@ -4,9 +4,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "WWW\\Controllers\\": "controllers/",
-            "WWW\\Models\\": "models/",
-            "WWW\\Config\\": "config/"
+            "WWW\\Controllers\\": "Controllers/",
+            "WWW\\Models\\": "Models/",
+            "WWW\\Config\\": "Config/"
         }
     },
     "require": {

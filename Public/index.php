@@ -1,7 +1,7 @@
 <?php
 // public/index.php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../Vendor/autoload.php';
 
 use WWW\Controller\UserController;
 

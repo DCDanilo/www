@@ -12,7 +12,7 @@ class Database{
     private static $user = 'root';
     private static $password = 'root';
 
-    private static $conn;
+    public static $conn;
 
     public static getConnection(){
         self::$conn = null;

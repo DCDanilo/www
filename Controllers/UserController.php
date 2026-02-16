@@ -1,6 +1,6 @@
 <?php
 
-namespace WWW\Contollers;
+namespace WWW\Controllers;
 
 use WWW\Models\User;
 

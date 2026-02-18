@@ -1,6 +1,8 @@
 <?php
 namespace WWW\Config;
 
+use WWW\Helpers\Debug;
+
 class Router {
     protected $routes = [];
 
@@ -16,7 +18,7 @@ class Router {
     public function dispatch($url) {
         // Rimuoviamo gli slash all'inizio e alla fine
         $url = trim($url, '/');
-
+        
         if (array_key_exists($url, $this->routes)) {
             $controllerName = $this->routes[$url]['controller'];
             $action = $this->routes[$url]['action'];

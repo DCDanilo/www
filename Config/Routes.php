@@ -1,10 +1,11 @@
 <?php
-namespace WWW\Config;
 
-use wWW\Config\Router;
+use WWW\Config\Router as Router;
 
 $router = new Router();
 
-$router->add('home','HomeController','index');
+$router->add('','HomeController','index');
+$router->add('users','UserController','index');
+$router->add('users/dettaglio/','UserController','show');
 
-$router->dispatch();s
+return $router;

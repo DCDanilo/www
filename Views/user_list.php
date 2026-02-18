@@ -5,7 +5,7 @@
   <ul class="list-group">
     <?php foreach ($users as $user): ?>
       <li class="list-group-item">
-        <a href="user/<?= htmlspecialchars($user['id_utente']) ?>"><?= htmlspecialchars($user['nome']) ?></a>
+        <a href="users/dettaglio/id?=<?= htmlspecialchars($user['id_utente']) ?>"><?= htmlspecialchars($user['nome']) ?></a>
       </li>
     <?php endforeach; ?>
   </ul>

@@ -1,8 +1,8 @@
 <?php include __DIR__.'/partials/header.php';?>
 
 <div class="container">
+  <?php if (isset($users) && !empty($users)):?>
   <h1>Lista Utenti</h1>
-
 <table class="table">
   <thead>
     <tr>
@@ -32,7 +32,15 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-  <button type="button" class="btn btn-success mt-5""><a href="users/crea" class="text-white text-decoration-none" >Aggiungi utente</a></button>
+<?php else:?>
+  <div class="alert alert-info text-center" role="alert">
+  <h3>Non sono stati trovati utenti nel database.</h3>
+  <h3>Clicca sul pulsante qui sotto per aggiungere un nuovo utente.</h3>
+  </div>
+  <div class="text-center mt-3">
+    <button type="button" class="btn btn-success" onclick="location.href='users/crea'">Aggiungi utente</button>
+  </div>
+<?php endif;?>
 </div>
 
 <?php include __DIR__.'/partials/footer.php';?>

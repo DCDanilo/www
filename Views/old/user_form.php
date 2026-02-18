@@ -9,7 +9,7 @@ $pageTitle = $isEdit ? "Modifica Utente" : "Aggiungi Nuovo Utente";
 
   <form method="post" action="<?php echo $action; ?>">
     <?php if($isEdit):?>
-      <input type="hidden" name="id" value="<?php echo $user['id_utente'];?>">
+      <input type="hidden" name="id_utente" value="<?php echo $user['id_utente'];?>">
     <?php endif;?>   
     <div class="mb-3">
       <label for="nome" class="form-label">Nome</label>

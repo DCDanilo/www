@@ -62,7 +62,7 @@ class UserController{
         include __DIR__ . '/../Views/user_form.php';
     }
 
-        public function update(){
+    public function update(){
         $nome = $_POST['nome'] ?? null;
         $cognome = $_POST['cognome'] ?? null;
         $email = $_POST['email'] ?? null;
@@ -74,4 +74,16 @@ class UserController{
             echo "Errore: dati mancanti";
         }
     }
+
+    public function searchBySurname(){
+        $cognome = $_GET['search'] ?? null;
+
+        if($cognome){
+            $users = User::searchBySurname($cognome);
+            include __DIR__ . '/../Views/user_list.php';
+        } else {
+            echo "Errore: dati mancanti";
+        }
+    }
+
 }

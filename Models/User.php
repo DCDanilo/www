@@ -3,6 +3,7 @@
 namespace WWW\Models;
 
 use WWW\Config\Database as Database;
+use WWW\Helpers\Debug;
 use PDO;
 
 
@@ -79,4 +80,21 @@ class User {
 
         $stmt->execute();    
     }
+
+    public static function searchBySurname($cognome) {
+        if (!self::$db) {
+            self::init();
+        }
+
+        $query= "SELECT * FROM utenti WHERE cognome = :cognome";
+        $stmt = self::$db->prepare($query);
+
+        $stmt->bindParam(':cognome', $cognome, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }

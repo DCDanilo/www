@@ -10,6 +10,7 @@ class ComposerStaticInit62dae930540677bd2e7ac422c64b6c41
         'W' =>
         array (
             'WWW\\Models\\' => 11,
+            'WWW\\Helpers\\' => 12,
             'WWW\\Controllers\\' => 16,
             'WWW\\Config\\' => 11,
         ),
@@ -19,6 +20,10 @@ class ComposerStaticInit62dae930540677bd2e7ac422c64b6c41
         'WWW\\Models\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Models',
+        ),
+        'WWW\\Helpers\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Helpers',
         ),
         'WWW\\Controllers\\' =>
         array (

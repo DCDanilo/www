@@ -6,7 +6,8 @@
         "psr-4": {
             "WWW\\Controllers\\": "Controllers/",
             "WWW\\Models\\": "Models/",
-            "WWW\\Config\\": "Config/"
+            "WWW\\Config\\": "Config/",
+            "WWW\\Helpers\\": "Helpers/"
         }
     },
     "require": {

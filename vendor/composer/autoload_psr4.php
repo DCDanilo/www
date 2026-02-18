@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WWW\\Models\\' => array($baseDir . '/Models'),
+    'WWW\\Helpers\\' => array($baseDir . '/Helpers'),
     'WWW\\Controllers\\' => array($baseDir . '/Controllers'),
     'WWW\\Config\\' => array($baseDir . '/Config'),
 );

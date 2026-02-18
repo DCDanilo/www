@@ -23,7 +23,7 @@ class UserController{
     }
 
     public function create(){
-        include __DIR__ . '/../Views/new_user.php';
+        include __DIR__ . '/../Views/user_form.php';
     }
 
     public function store(){
@@ -52,6 +52,26 @@ class UserController{
     }
 
     public function edit(){
-        include __DIR__ . '/../Views/new_user.php';
+        $id = $_GET['id'] ?? null;
+        $user= User::getUserById($id);
+
+        if(!$user){
+            die("Utente non trovato");
+        }
+
+        include __DIR__ . '/../Views/user_form.php';
+    }
+
+        public function update(){
+        $nome = $_POST['nome'] ?? null;
+        $cognome = $_POST['cognome'] ?? null;
+        $email = $_POST['email'] ?? null;
+
+        if($nome && $cognome && $email){
+            User::update($_POST['id_utente'],$nome, $cognome, $email);
+            header('Location: /users');
+        } else {
+            echo "Errore: dati mancanti";
+        }
     }
 }

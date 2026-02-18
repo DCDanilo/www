@@ -28,8 +28,11 @@ class User {
         }
         $query= "SELECT * FROM utenti WHERE id_utente = :id";
         $stmt = self::$db->prepare($query);
+
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
         $stmt->execute();
+
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -38,7 +41,7 @@ class User {
             self::init();
         }
 
-        $query="insert into utenti (nome, cognome, email) values(:nome, :cognome, :email)";
+        $query="INSERT INTO utenti (nome, cognome, email) VALUES (:nome, :cognome, :email)";
         $stmt = self::$db->prepare($query);
 
         $stmt->bindParam('nome', $nome, PDO::PARAM_STR);
@@ -53,23 +56,27 @@ class User {
             self::init();
         }
 
-        $query="delete from utenti where id_utente = :id";
+        $query="DELETE FROM utenti WHERE id_utente = :id";
         $stmt = self::$db->prepare($query);
+
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         
         $stmt->execute();    
     }
 
-        public static function edit($id, $email){
-        if (!self::$db) {
-            self::init();
-        }
+    public static function update($id,$nome, $cognome, $email){
+    if (!self::$db) {
+        self::init();
+    }
 
-        $query="update utenti set email = :email where id_utente = :id";
+        $query="UPDATE utenti SET nome = :nome, cognome = :cognome, email = :email WHERE id_utente = :id";
         $stmt = self::$db->prepare($query);
+
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam('email', $email, PDO::PARAM_STR);
-        
+        $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $stmt->bindParam(':cognome', $cognome, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+
         $stmt->execute();    
     }
 }

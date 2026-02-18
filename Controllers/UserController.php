@@ -18,6 +18,40 @@ class UserController{
             return;
         }        
         $user= User::getUserById($id);
+        // Debug::dd($user);
         include __DIR__ . '/../Views/user_details.php';
+    }
+
+    public function create(){
+        include __DIR__ . '/../Views/new_user.php';
+    }
+
+    public function store(){
+        $nome = $_POST['nome'] ?? null;
+        $cognome = $_POST['cognome'] ?? null;
+        $email = $_POST['email'] ?? null;
+
+        if($nome && $cognome && $email){
+            User::create($nome, $cognome, $email);
+            header('Location: /users');
+        } else {
+            echo "Errore: dati mancanti";
+        }
+    }
+
+    public function delete(){
+
+        $id = $_GET['id'] ?? null;
+        if($id==null){
+            echo "Utente non trovato";
+            return;
+        }        
+        User::delete($id);
+        header('Location: /users');
+        include __DIR__ . '/../Views/user_list.php';
+    }
+
+    public function edit(){
+        include __DIR__ . '/../Views/new_user.php';
     }
 }

@@ -16,6 +16,7 @@ class Router {
 
     // Metodo per smistare la richiesta
     public function dispatch($url) {
+        $url = explode('?', $url)[0];
         // Rimuoviamo gli slash all'inizio e alla fine
         $url = trim($url, '/');
         

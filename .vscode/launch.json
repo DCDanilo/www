@@ -13,7 +13,8 @@
             "pathMappings": {
                 "/var/www/html": "${workspaceRoot}"
             },
-            "ignore": ["**/vendor/**/*.php"]
+            "ignore": ["**/vendor/**/*.php"],
+            "stopOnEntry": false
         },
         {
             "name": "Launch currently open script",

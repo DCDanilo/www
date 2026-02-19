@@ -1,0 +1,43 @@
+services:
+  # Web Server (PHP 7.4.16)
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - uni-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Database (MariaDB 5.5.68)
+  db:
+    image: mariadb:5.5.64
+    # Fondamentale per compatibilità Mac M1/M2/M3 con versioni vecchie
+    platform: linux/amd64 
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_esame
+      MYSQL_USER: studente
+      MYSQL_PASSWORD: password_studente
+    volumes:
+      - db_data:/var/lib/mysql # Persistenza dei dati (non perdi il DB se spegni)
+    networks:
+      - uni-net
+
+  # phpMyAdmin (per simulare quello dell'università)
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - uni-net
+
+networks:
+  uni-net:
+
+volumes:
+  db_data:

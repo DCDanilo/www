@@ -12,3 +12,4 @@ $url = $_SERVER['REQUEST_URI'] ?? 'home';
 
 // Debug::dd($url);
 $router->dispatch($url);
+

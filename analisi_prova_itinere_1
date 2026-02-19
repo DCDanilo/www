@@ -1,0 +1,48 @@
+Si chiede di realizzare una web application per la vendita biglietti di una società ferroviaria che
+gestisce una linea turistica.
+
+La vendita avverrà on line ed i visitatori potranno acquistare i
+biglietti prenotando i posti a sedere.
+
+La società gestisce una sola linea lunga 54 km con 10
+stazioni, ognuna delle quali può essere sia origine che destinazione di traffico.
+
+Il costo del biglietto varierà in funzione dei km del viaggio.
+
+Sono previste 4 coppie di treni storici al giorno nei giorni festivi, tutto l’anno
+1 coppia di treni nei giorni feriali dal 1°giugno al 30 settembre.
+
+Ogni coppia di treni potrà avere una composizione variabile di carrozze e diverse locomotive.
+
+l
+sito, per quanto attiene alle pagine di consultazione degli orari dei treni, può avere dei picchi di
+accesso nella giornata di centinaia di utenti al secondo.
+
+l'applicazione dovrá avere:
+
+- 1(uno) backoffice amministrativo, per il calcolo della redditività di ciascun treno.
+- 1(uno) backoffice di esercizi, per la gestione degli orari e delle composizioni dei treni.
+-
+
+Profili previsti:
+- Visitatore:
+    - Può leggere le informazioni sulla linea,
+    - i paesi attraversati,
+    - le stazioni ed i convogli con la storia del materiale rotabile
+    - gli orari dei treni.
+
+- Cliente:
+    - Può scegliere la tratta, la data e comprare il biglietto con contestuale prenotazione del posto a sedere
+      I viaggiatori non possono viaggiare in piedi.
+
+- Impiegato amministrativo:
+    - Può verificare l’occupazione dei treni
+    - richiedere eventuali treni straordinari al backoffice di esercizio
+    - Può richiedere la cessazione di treni senza prenotazione.
+
+- Impiegato di esercizio:
+    - Può comporre i convogli a partire dal materiale rotabile disponibile.
+    - Verifica la disponibilità del materiale rotabile in accordo con gli orari.
+    - Costruisce gli orari impostando tutte le corse secondo quanto previsto nei requisiti.
+    - Può variare le corse aggiungendone nuove, cancellando corse presenti o modificandone gli orari.
+    - Può agire secondo le indicazioni del backoffice amministrativo o autonomamente per ottimizzare gli orari o l’utilizzo del materiale rotabile

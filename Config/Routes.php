@@ -14,8 +14,6 @@ $router->add('carrozze','HomeController','carrozze');
 
 
 
-
-
 // $router->add('orari-treni','HomeController','orariTreni');
 // //user Routes
 // $router->add('users','UserController','index');

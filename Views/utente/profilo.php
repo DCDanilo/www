@@ -1,6 +1,5 @@
 <div class="container">
-  <p>Benvenuto nella pagina di registrazione! Compila il modulo sottostante per creare un nuovo account e accedere a tutte le funzionalità del nostro sito.
-     Siamo entusiasti di averti con noi!</p>
+  <p>Ecco le informazioni relative al tuo profilo</p>
   <form method="post" action="/users/store">
     <div class="mb-3">
       <label for="nome" class="form-label">Nome</label>

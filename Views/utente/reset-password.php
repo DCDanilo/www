@@ -1,5 +1,3 @@
-<?php include __DIR__.'/../partials/header.php';?>
-
 <div class="container">
   <p>Per recuperare la password, inserisci la tua email e clicca su Reset.</p>
 
@@ -12,5 +10,3 @@
   </form>
 
 </div>
-
-<?php include __DIR__.'/../partials/footer.php';?>

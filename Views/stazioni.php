@@ -1,5 +1,3 @@
-<?php include __DIR__.'/partials/header.php';?>
-
 <div class="container">
     <h2>Stazioni</h2>
     <h4>Qui puoi visualizzare le stazioni della linea.</h4>
@@ -37,4 +35,3 @@
         </table>
     </div>    
 </div>
-<?php include __DIR__.'/partials/footer.php';?>

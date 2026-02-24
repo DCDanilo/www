@@ -13,12 +13,13 @@ $router->add('carrozze','HomeController','carrozze');
 //Rotte autenticazione
 $router->add('registrati','AuthController','register');
 $router->add('accedi','AuthController','login');
+$router->add('users/login','AuthController','authenticate');
 $router->add('password-reset','AuthController','resetPassword');
 
-// rotte utenti
+//Rotte utente
 $router->add('users/store','UserController','store');
+$router->add('profilo', 'UserController', 'profilo');  
 $router->add('users/reset-password','UserController','resetPassword');
-$router->add('users/login','AuthController','authenticate');
-$router->add('users/logout','UserController','logout');  
+$router->add('users/logout','UserController','logout');
 
 return $router;

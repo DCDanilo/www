@@ -7,6 +7,10 @@ use WWW\Helpers\Debug;
 
 class UserController{
 
+    public function profilo(){
+        include __DIR__.'/../Views/utente/profilo.php';
+    }
+
     public function store(){
         $nome = $_POST['nome'] ?? null;
         $cognome = $_POST['cognome'] ?? null;

@@ -1,7 +1,3 @@
-<?php session_start();
-
-include __DIR__.'/partials/header.php';?>
-
 <div class="container">
   <h1>Benvenuto <?php echo $_SESSION['user_nome'] ?? 'utente'; ?></h1>
   <h4>Qui puoi visualizzare le informazioni sulla linea ferroviaria, gli orari dei treni, le stazioni e le carrozze.</h4>
@@ -11,5 +7,3 @@ include __DIR__.'/partials/header.php';?>
 
   
 </div>
-
-<?php include __DIR__.'/partials/footer.php';?>

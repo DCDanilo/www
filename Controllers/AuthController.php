@@ -20,7 +20,7 @@ Class AuthController {
         $email = $_POST['email'] ?? null;
         $password = $_POST['password'] ?? null;        
 
-        if($email && $password){
+        if(isset($email) && isset($password)){
             $user = User::getUserByEmail($email);
         }
 

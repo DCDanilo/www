@@ -1,30 +1,36 @@
-<?php 
+<?php
 
 namespace WWW\Controllers;
+
 use WWW\Models\User;
 
-Class AuthController {
-    public function login(){
-        include __DIR__.'/../Views/utente/accedi.php';
+class AuthController
+{
+    public function login()
+    {
+        include __DIR__ . '/../Views/utente/accedi.php';
     }
 
-    public function register(){
-        include __DIR__.'/../Views/utente/registrati.php';
+    public function register()
+    {
+        include __DIR__ . '/../Views/utente/registrati.php';
     }
 
-    public function resetPassword(){
-        include __DIR__.'/../Views/utente/reset-password.php';
+    public function resetPassword()
+    {
+        include __DIR__ . '/../Views/utente/reset-password.php';
     }
 
-    public function authenticate(){
+    public function authenticate()
+    {
         $email = $_POST['email'] ?? null;
-        $password = $_POST['password'] ?? null;        
+        $password = $_POST['password'] ?? null;
 
-        if(isset($email) && isset($password)){
+        if (isset($email) && isset($password)) {
             $user = User::getUserByEmail($email);
         }
 
-        if($user['email'] == $email &&  password_verify($password, $user['password'])){
+        if ($user['email'] == $email &&  password_verify($password, $user['password'])) {
             session_start();
             $_SESSION['user_id'] = $user['cod_cliente'];
             $_SESSION['user_name'] = $user['nome'];
@@ -34,5 +40,4 @@ Class AuthController {
             echo "Credenziali non valide";
         }
     }
-    
 }

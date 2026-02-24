@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_esame`
+-- Database: `db_esame`utf8mb4
 --
 
 CREATE DATABASE IF NOT EXISTS `db_esame`
@@ -31,7 +31,7 @@ COLLATE utf8mb4_unicode_ci;
 -- Usa il database `db_esame`
 --
 
-USE DATABASE `db_esame`
+USE `db_esame`;
 
 -- --------------------------------------------------------
 
@@ -41,12 +41,12 @@ USE DATABASE `db_esame`
 
 CREATE TABLE `clienti` (
   `cod_cliente` int(11) NOT NULL,
-  `nome` varchar(60) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cognome` varchar(60) CHARACTER SET utf32 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cognome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `creato_il` date NOT NULL,
   `modificato_il` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -56,13 +56,13 @@ CREATE TABLE `clienti` (
 
 CREATE TABLE `impiegati` (
   `id_impiegato` int(11) NOT NULL,
-  `nome` varchar(60) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cognome` varchar(60) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cognome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `cod_ruolo` int(11) NOT NULL,
   `creato_il` date NOT NULL,
   `modificato_il` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -72,11 +72,11 @@ CREATE TABLE `impiegati` (
 
 CREATE TABLE `stazioni` (
   `cod_stazione` int(11) NOT NULL,
-  `nome` varchar(60) CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `distanza` float NOT NULL,
   `creato_il` int(11) NOT NULL,
   `modificato_il` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indici per le tabelle scaricate

@@ -3,8 +3,8 @@ session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use WWW\Controllers\UserController;
-use WWW\Helpers\Debug;
+// use WWW\Controllers\UserController;
+// use WWW\Helpers\Debug;
 
 require_once __DIR__ . '/../Config/Routes.php';
 

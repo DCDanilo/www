@@ -12626,3 +12626,94 @@ Stack trace:
 [19] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
 [19] Log closed at 2026-02-19 11:23:10.176271
 
+[17] Log opened at 2026-02-24 06:15:51.087565
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:51.352419
+
+[17] Log opened at 2026-02-24 06:15:51.456285
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:51.473339
+
+[17] Log opened at 2026-02-24 06:15:53.468069
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:53.515420
+
+[17] Log opened at 2026-02-24 06:15:54.222877
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:54.264946
+
+[17] Log opened at 2026-02-24 06:15:55.052990
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:55.128647
+
+[17] Log opened at 2026-02-24 06:15:55.936002
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:55.960175
+
+[17] Log opened at 2026-02-24 06:15:56.317067
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:56.341699
+
+[17] Log opened at 2026-02-24 06:15:56.863489
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:56.887832
+
+[17] Log opened at 2026-02-24 06:15:58.529377
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:15:58.553348
+
+[17] Log opened at 2026-02-24 06:16:00.435231
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:16:00.459892
+
+[17] Log opened at 2026-02-24 06:16:01.283621
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:16:01.308010
+
+[17] Log opened at 2026-02-24 06:16:01.603539
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:16:01.627748
+
+[17] Log opened at 2026-02-24 06:16:01.921670
+[17] [Step Debug] INFO: Connecting to configured address/port: host.docker.internal:9003.
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', poll success, but error: Operation now in progress (29).
+[17] [Step Debug] WARN: Creating socket for 'host.docker.internal:9003', connect: Network is unreachable.
+[17] [Step Debug] ERR: Could not connect to debugging client. Tried: host.docker.internal:9003 (through xdebug.client_host/xdebug.client_port) :-(
+[17] Log closed at 2026-02-24 06:16:01.945740
+

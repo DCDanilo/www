@@ -29,6 +29,7 @@ Class AuthController {
             $_SESSION['user_id'] = $user['cod_cliente'];
             $_SESSION['user_name'] = $user['nome'];
             header('Location: /');
+            exit();
         } else {
             echo "Credenziali non valide";
         }

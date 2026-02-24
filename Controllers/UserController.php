@@ -11,6 +11,10 @@ class UserController{
         include __DIR__.'/../Views/utente/profilo.php';
     }
 
+    public function biglietti(){
+        include __DIR__.'/../Views/utente/biglietti.php';
+    }
+
     public function store(){
         $nome = $_POST['nome'] ?? null;
         $cognome = $_POST['cognome'] ?? null;
@@ -65,11 +69,10 @@ class UserController{
         if($user){
             $new_password = bin2hex(random_bytes(8));
 
-            User::updatePassword($user['cod_cliente'], $new_password);
+            User::updatePassword($user['cod_cliente'], password_hash($new_password, PASSWORD_BCRYPT));
+
+            include __DIR__.'/../Views/utente/new_password.php';
             
-            echo "La tua nuova password è: " . $new_password;
-            echo "<br> Ti consigliamo di cambiarla al più presto dopo aver effettuato l'accesso.";
-            echo "<br><a href='/accedi'>Accedi</a>";
         } 
         else{
             echo "utente non registrato";
@@ -80,5 +83,6 @@ class UserController{
         session_start();
         session_destroy();
         header('Location: /');
+        exit();
     } 
 }

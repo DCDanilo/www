@@ -33,7 +33,7 @@ Profili previsti:
 
 - Cliente:
     - Può scegliere la tratta, la data e comprare il biglietto con contestuale prenotazione del posto a sedere
-      I viaggiatori non possono viaggiare in piedi.
+    - I viaggiatori non possono viaggiare in piedi.
 
 - Impiegato amministrativo:
     - Può verificare l’occupazione dei treni
@@ -45,4 +45,5 @@ Profili previsti:
     - Verifica la disponibilità del materiale rotabile in accordo con gli orari.
     - Costruisce gli orari impostando tutte le corse secondo quanto previsto nei requisiti.
     - Può variare le corse aggiungendone nuove, cancellando corse presenti o modificandone gli orari.
-    - Può agire secondo le indicazioni del backoffice amministrativo o autonomamente per ottimizzare gli orari o l’utilizzo del materiale rotabile
+    - Può agire secondo le indicazioni del backoffice amministrativo o autonomamente per ottimizzare gli orario
+      l’utilizzo del materiale rotabile

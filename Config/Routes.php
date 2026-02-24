@@ -19,6 +19,7 @@ $router->add('password-reset','AuthController','resetPassword');
 //Rotte utente
 $router->add('users/store','UserController','store');
 $router->add('profilo', 'UserController', 'profilo');  
+$router->add('biglietti','UserController','biglietti');
 $router->add('users/reset-password','UserController','resetPassword');
 $router->add('users/logout','UserController','logout');
 

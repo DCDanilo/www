@@ -1,3 +1,4 @@
 ./Logs
 Logs/xdebug.log
 docker-compose.yml
+dockerfile

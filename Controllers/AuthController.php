@@ -20,14 +20,16 @@ Class AuthController {
         $email = $_POST['email'] ?? null;
         $password = $_POST['password'] ?? null;
 
+        
+
         if($email && $password){
             $user = User::getUserByEmail($email);
         }
 
-        if($user['email'] == $email &&  $user['password']== $password){
+        if($user['email'] == $email &&  password_verify($password, $user['password'])){
             session_start();
             $_SESSION['user_id'] = $user['cod_cliente'];
-            $_SESSION['user_nome'] = $user['nome'];
+            $_SESSION['user_name'] = $user['nome'];
             header('Location: /');
         } else {
             echo "Credenziali non valide";

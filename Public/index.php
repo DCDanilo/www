@@ -1,6 +1,5 @@
 <?php
 session_start();
-// public/index.php
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -11,5 +10,4 @@ require_once __DIR__ . '/../Config/Routes.php';
 
 $url = $_SERVER['REQUEST_URI'] ?? 'home';
 
-// Debug::dd($url);
 $router->dispatch($url);

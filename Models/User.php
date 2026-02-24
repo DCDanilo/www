@@ -14,40 +14,32 @@ class User {
         self::$db = Database::getConnection();
     }
 
-    public static function all() {
-        if (!self::$db) {
-            self::init();
-        }
-        $query= "SELECT * FROM utenti";
-        $stmt = self::$db->query($query);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     public static function getUserById($id) {
          if (!self::$db) {
             self::init();
         }
-        $query= "SELECT * FROM utenti WHERE id_utente = :id";
+        $query= "SELECT * FROM clienti WHERE cod_cliente = :id";
         $stmt = self::$db->prepare($query);
 
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);           
 
         $stmt->execute();
 
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function create($nome, $cognome, $email){
+    public static function create($nome, $cognome, $email, $password){
         if (!self::$db) {
             self::init();
         }
 
-        $query="INSERT INTO utenti (nome, cognome, email) VALUES (:nome, :cognome, :email)";
+        $query="INSERT INTO clienti (nome, cognome, email, password, creato_il, modificato_il) VALUES (:nome, :cognome, :email, :password, NOW(), NOW())";
         $stmt = self::$db->prepare($query);
 
-        $stmt->bindParam('nome', $nome, PDO::PARAM_STR);
-        $stmt->bindParam('cognome', $cognome, PDO::PARAM_STR);
-        $stmt->bindParam('email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $stmt->bindParam(':cognome', $cognome, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
 
         $stmt->execute();    
     }
@@ -57,7 +49,7 @@ class User {
             self::init();
         }
 
-        $query="DELETE FROM utenti WHERE id_utente = :id";
+        $query="DELETE FROM clienti WHERE cod_cliente = :id";
         $stmt = self::$db->prepare($query);
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -70,7 +62,7 @@ class User {
         self::init();
     }
 
-        $query="UPDATE utenti SET nome = :nome, cognome = :cognome, email = :email WHERE id_utente = :id";
+        $query="UPDATE clienti SET nome = :nome, cognome = :cognome, email = :email, modificato_il = NOW() WHERE cod_cliente = :id";
         $stmt = self::$db->prepare($query);
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -81,20 +73,32 @@ class User {
         $stmt->execute();    
     }
 
-    public static function searchBySurname($cognome) {
-        if (!self::$db) {
+    //ricerca per cognome verrá utilizzato per il login
+    public static function getUserByEmail($email) {
+         if (!self::$db) {
             self::init();
         }
-
-        $query= "SELECT * FROM utenti WHERE cognome = :cognome";
+        $query= "SELECT * FROM clienti WHERE email = :email";
         $stmt = self::$db->prepare($query);
 
-        $stmt->bindParam(':cognome', $cognome, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
         $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public static function updatePassword($id, $new_password){
+         if (!self::$db) {
+            self::init();
+        }
 
+        $query="UPDATE clienti SET password = :password, modificato_il = NOW() WHERE cod_cliente = :id";
+        $stmt = self::$db->prepare($query);
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':password', $new_password, PDO::PARAM_STR);
+
+        $stmt->execute();  
+    }
 }

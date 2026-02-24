@@ -16,5 +16,5 @@ class HomeController {
 
     public function carrozze(){
         include __DIR__.'/../Views/carrozze.php';
-    }
+    }    
 }

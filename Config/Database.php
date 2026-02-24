@@ -8,7 +8,7 @@ Use PDO_EXCEPTION;
 
 class Database{
     private static $host = 'db';
-    private static $db_name = 'test';
+    private static $db_name = 'db_esame';
     private static $user = 'root';
     private static $password = 'root';
 

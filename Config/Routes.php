@@ -4,25 +4,21 @@ use WWW\Config\Router as Router;
 
 $router = new Router();
 
-// rotte pagina
-
+//Rotte Sito
 $router->add('','HomeController','index');
 $router->add('orari-treni','HomeController','orariTreni');
 $router->add('stazioni','HomeController','stazioni');
 $router->add('carrozze','HomeController','carrozze');
 
+//Rotte autenticazione
+$router->add('registrati','AuthController','register');
+$router->add('accedi','AuthController','login');
+$router->add('password-reset','AuthController','resetPassword');
 
-
-
-// $router->add('orari-treni','HomeController','orariTreni');
-// //user Routes
-// $router->add('users','UserController','index');
-// $router->add('users/dettaglio','UserController','show');
-// $router->add('users/crea','UserController','create');
-// $router->add('users/store','UserController','store');
-// $router->add('users/update','UserController','update');
-// $router->add('users/elimina','UserController','delete');
-// $router->add('users/modifica','UserController','edit');
-// $router->add('users/search','UserController','searchBySurname');
+// rotte utenti
+$router->add('users/store','UserController','store');
+$router->add('users/reset-password','UserController','resetPassword');
+$router->add('users/login','AuthController','authenticate');
+$router->add('users/logout','UserController','logout');  
 
 return $router;

@@ -6,60 +6,36 @@ use WWW\Models\User;
 use WWW\Helpers\Debug;
 
 class UserController{
-    public function index(){
-        $users = User::all();
-        include __DIR__ . '/../Views/user_list.php';
-    }
-
-    public function show(){        
-        $id = $_GET['id'] ?? null;
-        if($id==null){
-            echo "Utente non trovato";
-            return;
-        }        
-        $user= User::getUserById($id);
-        // Debug::dd($user);
-        include __DIR__ . '/../Views/user_details.php';
-    }
-
-    public function create(){
-        include __DIR__ . '/../Views/user_form.php';
-    }
 
     public function store(){
         $nome = $_POST['nome'] ?? null;
         $cognome = $_POST['cognome'] ?? null;
         $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $password_confirm = $_POST['password_confirm'] ?? null;
 
-        if($nome && $cognome && $email){
-            User::create($nome, $cognome, $email);
-            header('Location: /users');
-        } else {
-            echo "Errore: dati mancanti";
-        }
-    }
+        $user = User::getUserByEmail($email);
 
-    public function delete(){
-
-        $id = $_GET['id'] ?? null;
-        if($id==null){
-            echo "Utente non trovato";
+        if($password !== $password_confirm){
+            echo "le password non coincidono";
             return;
-        }        
-        User::delete($id);
-        header('Location: /users');
-        include __DIR__ . '/../Views/user_list.php';
-    }
-
-    public function edit(){
-        $id = $_GET['id'] ?? null;
-        $user= User::getUserById($id);
-
-        if(!$user){
-            die("Utente non trovato");
+        }
+        else{
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
         }
 
-        include __DIR__ . '/../Views/user_form.php';
+        if($user){
+            echo "Utente già registrato";
+            return;
+        }else{
+
+            if($nome && $cognome && $email){
+                User::create($nome, $cognome, $email, $password_hash);
+                header('Location: /');
+            } else {
+                echo "Errore: dati mancanti";
+            }            
+        }
     }
 
     public function update(){
@@ -69,21 +45,36 @@ class UserController{
 
         if($nome && $cognome && $email){
             User::update($_POST['id_utente'],$nome, $cognome, $email);
-            header('Location: /users');
+            header('Location: /');
         } else {
             echo "Errore: dati mancanti";
         }
     }
 
-    public function searchBySurname(){
-        $cognome = $_GET['search'] ?? null;
+    public function resetPassword(){
+        $email = $_POST['email'] ?? null;
 
-        if($cognome){
-            $users = User::searchBySurname($cognome);
-            include __DIR__ . '/../Views/user_list.php';
-        } else {
-            echo "Errore: dati mancanti";
+        if($email && filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $user = User::getUserByEmail($email);
         }
+
+        if($user){
+            $new_password = bin2hex(random_bytes(8));
+
+            User::updatePassword($user['cod_cliente'], $new_password);
+            
+            echo "La tua nuova password è: " . $new_password;
+            echo "<br> Ti consigliamo di cambiarla al più presto dopo aver effettuato l'accesso.";
+            echo "<br><a href='/accedi'>Accedi</a>";
+        } 
+        else{
+            echo "utente non registrato";
+        }   
     }
 
+    public function logout(){
+        session_start();
+        session_destroy();
+        header('Location: /');
+    } 
 }

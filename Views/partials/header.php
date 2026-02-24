@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,37 +7,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SOCIETÀ FERROVIE TURISTICHE ‐ SFT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="<?php echo __DIR__.'/../../public/css/style.css';?>">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">SFT</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">SFT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/orari-treni">Orari Treni</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/stazioni">Stazioni</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carrozze">Carrozze</a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/orari-treni">Orari Treni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stazioni">Stazioni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/carrozze">Carrozze</a>
+          </li>
+          <li class="nav-item">  
+            <?php if(isset($_SESSION['user_id'])): ?>
+              <a class="nav-link" href="/acquista-biglietto">Acquista Biglietto</a>
+            <?php endif; ?>
+          </li>
+        </ul>
 
-      </ul>
-      <form class="d-flex" role="search" method=GET action="/users/search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <ul class="navbar-nav me-3 mb-2 mb-lg-0">   
+            <?php if(!isset($_SESSION['user_id'])): ?>
+              <li class="nav-item">  
+                <a class="nav-link" href="/registrati">Registrati</a>
+              </li>
+              <li class="nav-item">  
+                <a class="nav-link" href="/accedi">Accedi</a>
+              </li>
+              <?php else: ?>
+                <li class="nav-item">  
+                  <a class="nav-link" href="/profilo">Profilo</a>
+                </li>
+                <li class="nav-item">  
+                  <a class="nav-link" href="/biglietti">Biglietti acquistati</a>
+                </li>
+                <li class="nav-item">  
+                  <a class="nav-link" href="/users/logout">Logout</a>
+                </li>            
+              <?php endif; ?>
+          </ul>
+
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>

@@ -18,9 +18,7 @@ Class AuthController {
 
     public function authenticate(){
         $email = $_POST['email'] ?? null;
-        $password = $_POST['password'] ?? null;
-
-        
+        $password = $_POST['password'] ?? null;        
 
         if($email && $password){
             $user = User::getUserByEmail($email);

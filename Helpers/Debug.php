@@ -2,11 +2,13 @@
 
 namespace WWW\Helpers;
 
-class Debug{
-    public static function dd($var){
+class Debug
+{
+    public static function dd($var)
+    {
         echo "<pre>";
         var_dump($var);
-        echo"</pre>";
+        echo "</pre>";
         die();
     }
 }

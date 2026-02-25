@@ -60,9 +60,21 @@ CREATE TABLE `impiegati` (
   `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `cognome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `cod_ruolo` int(11) NOT NULL,
   `creato_il` date NOT NULL,
   `modificato_il` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Ruoli`
+--
+
+CREATE TABLE `ruoli` (
+  `cod_ruolo` varchar(2) NOT NULL,
+  `Descrizione` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -75,8 +87,8 @@ CREATE TABLE `stazioni` (
   `cod_stazione` int(11) NOT NULL,
   `nome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `distanza` float NOT NULL,
-  `creato_il` int(11) NOT NULL,
-  `modificato_il` int(11) NOT NULL
+  `creato_il` date NOT NULL,
+  `modificato_il` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -94,6 +106,13 @@ ALTER TABLE `clienti`
 --
 ALTER TABLE `impiegati`
   ADD PRIMARY KEY (`id_impiegato`);
+
+
+--
+-- Indici per le tabelle `ruoli`
+--
+ALTER TABLE `ruoli`
+  ADD PRIMARY KEY (`cod_ruolo`);
 
 --
 -- Indici per le tabelle `stazioni`
@@ -123,6 +142,41 @@ ALTER TABLE `impiegati`
 ALTER TABLE `stazioni`
   MODIFY `cod_stazione` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
+-- --------------------------------------------------------
+
+--
+-- Inserimento dei dati per la tabella `stazioni`
+--
+
+INSERT INTO `stazioni` (cod_stazione, nome, distanza, creato_il, modificato_il) VALUES
+(NULL, 'Torre Spaventa', 0.000, NOW(), NOW()),
+(NULL, 'Prato Terra', 2.700, NOW(), NOW()),
+(NULL, 'Rocca Pietrosa', 7.580, NOW(), NOW()),
+(NULL, 'Villa Pietrosa', 12.680, NOW(), NOW()),
+(NULL, 'Villa Santa Maria', 16.900, NOW(), NOW()),
+(NULL, 'Pietra Santa Maria', 23.950, NOW(), NOW()),
+(NULL, 'Castro Marino', 31.500, NOW(), NOW()),
+(NULL, 'Porto Spigola', 39.500, NOW(), NOW()),
+(NULL, 'Porto San Felice', 46.000, NOW(), NOW()),
+(NULL, 'Villa San Felice', 54.680, NOW(), NOW());
+-- --------------------------------------------------------
+
+--
+-- Inserimento dei dati per la tabella `Ruoli`
+--
+
+INSERT INTO `ruoli` (cod_ruolo, Descrizione) VALUES
+('IA', 'Impiegato Amministrativo'),
+('IE', 'Impiegato di Esercizio');
+
+-- --------------------------------------------------------
+
+ALTER TABLE `impiegati`
+ADD CONSTRAINT `fk_impiegati_ruoli`
+FOREIGN KEY (`cod_ruolo`) REFERENCES `ruoli`(`cod_ruolo`)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

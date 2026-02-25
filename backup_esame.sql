@@ -61,7 +61,7 @@ CREATE TABLE `impiegati` (
   `cognome` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cod_ruolo` int(11) NOT NULL,
+  `cod_ruolo` VARCHAR(2) NOT NULL,
   `creato_il` date NOT NULL,
   `modificato_il` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
